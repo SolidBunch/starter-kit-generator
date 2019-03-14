@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>StarterKit Generator</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+
+		<div class="jumbotron">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h1 class="display-4">StarterKit Generator</h1>
+						<p class="lead">This tool takes latest version of <a href="https://github.com/SolidBunch/starter-kit">StarketKit</a> theme from GitHub and compiles your prefences to a .zip file :)</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<form id="generator" method="post" action="javascript:;">
+			<div class="container mt-5">
+				<div class="row">
+					<div class="col-md-6">
+						<h2 class="mb-3">1. Custom Post Types</h2>
+
+						<div class="custom-control custom-checkbox">
+							<input checked name="post_types[]" value="testimonials" type="checkbox" class="custom-control-input" id="cpt-testimonials">
+							<label class="custom-control-label" for="cpt-testimonials">Testimonials</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input checked name="post_types[]" value="team_members" type="checkbox" class="custom-control-input" id="cpt-team-members">
+							<label class="custom-control-label" for="cpt-team-members">Team Members</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input checked name="post_types[]" value="portfolio" type="checkbox" class="custom-control-input" id="cpt-portfolio">
+							<label class="custom-control-label" for="cpt-portfolio">Portfolio</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input checked name="post_types[]" value="news" type="checkbox" class="custom-control-input" id="cpt-news">
+							<label class="custom-control-label" for="cpt-news">News</label>
+						</div>
+
+						<h2 class="mb-3 mt-5">2. Functionality</h2>
+
+						<div class="custom-control custom-checkbox">
+							<input checked name="features[]" value="composerlayout" type="checkbox" class="custom-control-input" id="jsc-header-footer">
+							<label class="custom-control-label" for="jsc-header-footer">JS Composer Layout</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input checked name="features[]" value="oauth" type="checkbox" class="custom-control-input" id="oauth">
+							<label class="custom-control-label" for="oauth">OAuth</label>
+						</div>
+
+					</div>
+					<div class="col-md-6">
+
+						<h2 class="mb-3 mt-5 mt-md-0">3. Shortcodes</h2>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="alert" checked type="checkbox" class="custom-control-input" id="shortcode-alert">
+							<label class="custom-control-label" for="shortcode-alert">Alert</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="button" checked type="checkbox" class="custom-control-input" id="shortcode-button">
+							<label class="custom-control-label" for="shortcode-button">Button</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="contact_form" checked type="checkbox" class="custom-control-input" id="shortcode-contact-form">
+							<label class="custom-control-label" for="shortcode-contact-form">Contact Form</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="google_map" checked type="checkbox" class="custom-control-input" id="shortcode-google-map">
+							<label class="custom-control-label" for="shortcode-google-map">Google Map</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="heading" checked type="checkbox" class="custom-control-input" id="shortcode-heading">
+							<label class="custom-control-label" for="shortcode-heading">Heading</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="menu" checked type="checkbox" class="custom-control-input" id="shortcode-menu">
+							<label class="custom-control-label" for="shortcode-menu">Menu</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="news" checked type="checkbox" class="custom-control-input" id="shortcode-news">
+							<label class="custom-control-label" for="shortcode-news">News</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="posts" checked type="checkbox" class="custom-control-input" id="shortcode-posts">
+							<label class="custom-control-label" for="shortcode-posts">Posts</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="pricing_table" checked type="checkbox" class="custom-control-input" id="shortcode-pricing-table">
+							<label class="custom-control-label" for="shortcode-pricing-table">Pricing Table</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="social_login" checked type="checkbox" class="custom-control-input" id="shortcode-social-login">
+							<label class="custom-control-label" for="shortcode-social-login">Social Login</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="tabs" checked type="checkbox" class="custom-control-input" id="shortcode-tabs">
+							<label class="custom-control-label" for="shortcode-tabs">Tabs</label>
+						</div>
+
+						<div class="custom-control custom-checkbox">
+							<input name="shortcodes[]" value="toggles" checked type="checkbox" class="custom-control-input" id="shortcode-toggles">
+							<label class="custom-control-label" for="shortcode-toggles">Toggles</label>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="container mt-5">
+				<div class="row equal align-items-center">
+					<div class="col-3">
+
+						<button type="submit" id="submit" class="btn btn-success">Generate my theme</button>
+
+					</div>
+					<div class="col-9">
+
+						<div class="progress" style="display: none;">
+							<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" id="progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+
+					</div>
+				</div>
+				<div class="row">
+						<div class="col-12">
+							<input class="form-control mt-3 mb-3" readonly id="progress-text" style="display: none;"></textarea>
+						</div>
+				</div>
+			</div>
+
+		</form>
+
+		<footer class="container">
+			<div class="row">
+				<div class="col-12">
+					<hr>
+					<p>v.0.0.1a. Created in 2019 with <span class="text-danger">❤</span> by <a href="https://github.com/DKudleichuk">D1m0n4eg</a> for <a href="https://solidbunch.com">SolidBunch</a></p>
+				</div>
+			</div>
+		</footer>
+
+		<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">StarterKit Generator</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p id="modal-message"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.2.0/jszip.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+
+		<script>
+			(function($) {
+
+				var themeBuilder = {
+
+					/**
+					 * Constructor
+					 **/
+					init: function () {
+
+						this.handleFormSubmit();
+
+					},
+
+					/**
+					 * Start building on form submit
+					 **/
+					handleFormSubmit: function() {
+
+						var self = this,
+						zipURL = 'https://solidbunch.com/generator.php',
+						folderName = 'starter-kit-master';
+
+						$('#generator').on('submit', function( e ) {
+							e.preventDefault();
+							
+							var $form = $(this),
+							$progress = $('#progress'),
+							$progressText = $('#progress-text'),
+							$submit = $('#submit'),
+							formData = {},
+							defaultPostTypes = ["testimonials", "team_members", "portfolio", "news"],
+							defaultShortcodes = ["alert", "button", "contact_form", "google_map", "heading", "menu", "news", "posts", "pricing_table", "social_login", "tabs", "toggles"],
+							defaultFeatures = ["composerlayout", "oauth"];
+
+							$.each( $form.serializeArray(), function( _, kv) {
+								var n = kv.name.replace( '[]', '');
+								if (formData.hasOwnProperty( n)) {
+									formData[n] = $.makeArray( formData[n]);
+									formData[n].push( kv.value);
+								}
+								else {
+									formData[n] = kv.value;
+								}
+							});
+
+							if( typeof( formData.post_types ) !== 'undefined' ) {
+
+								var postTypesToRemove = defaultPostTypes.filter( function( el ) {
+									return !formData.post_types.includes(el);
+								});
+
+							} else {
+
+								var postTypesToRemove = defaultPostTypes;
+
+							}
+
+							if( typeof( formData.shortcodes ) !== 'undefined' ) {
+
+								var shortcodesToRemove = defaultShortcodes.filter( function( el ) {
+									return !formData.shortcodes.includes(el);
+								});
+
+							} else {
+
+								var shortcodesToRemove = defaultShortcodes;
+
+							}
+
+							if( typeof( formData.features ) !== 'undefined' ) {
+
+								var featuresToRemove = defaultFeatures.filter( function( el ) {
+									return !formData.features.includes(el);
+								});
+
+							} else {
+
+								var featuresToRemove = defaultFeatures;
+
+							}
+
+							if( $submit.attr('disabled') == 'disabled' ) {
+								return false;
+							}
+
+							$submit.attr('disabled', 'disabled');
+							$progress.parent().show();
+							$progress.css('width', 'auto').html('<span style="padding: 0 15px;">Downloading theme from GitHub...</span>');
+
+							// get latest .zip
+							JSZipUtils.getBinaryContent( zipURL, function( err, data) {
+
+								if( err) {
+									self.showMessage( 'Failed to retrieve .zip file: ' + err );
+									$submit.removeAttr('disabled');
+								}
+
+								try {
+
+									JSZip.loadAsync(data).then( function updateContent( zip) {
+
+										// remove post types
+										if( postTypesToRemove.length > 0 ) {
+
+											$.each( postTypesToRemove, function( key, val) {
+												zip.remove( folderName + '/app/Model/' + self.sanitizeModelName( val ) + '.php' );
+												zip.remove( folderName + '/framework-customizations/theme/options/posts/' + val + '.php' );
+											});
+
+										}
+
+										// remove shortcodes
+										if( shortcodesToRemove.length > 0 ) {
+
+											$.each( shortcodesToRemove, function( key, val) {
+												zip.remove( folderName + '/app/Shortcodes/' + val );
+											});
+
+										}
+
+										// remove features
+										if( featuresToRemove.length > 0 ) {
+
+											// remove oauth
+											if( $.inArray( 'oauth', featuresToRemove ) !== -1 ) {
+
+												zip.remove( folderName + '/vendor-custom/oauth' );
+												zip.remove( folderName + '/app/Controller/OAuth.php' );
+												zip.remove( folderName + '/app/Shortcodes/social_login' );
+
+												// remove from config
+												var configFile = folderName + '/framework-customizations/theme/options/social.php',
+												configFileContent = zip.file( configFile ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startoauthsettings[\s\S]*?\/\/endoauthsettings/g, '');
+												});
+
+												zip.file( configFile, configFileContent);
+
+											}
+
+											// remove JS Composer layout
+											if( $.inArray( 'composerlayout', featuresToRemove ) !== -1 ) {
+
+												zip.remove( folderName + '/app/Model/Layout.php' );
+												zip.remove( folderName + '/framework-customizations/theme/options/posts/composerlayout.php' );
+
+												// remove code from header
+												var headerFile = folderName + '/header.php',
+												headerContent = zip.file( headerFile ).async( 'string' ).then( function( content) {
+													return content.replace(/\<\!\-\-startcomposerlayout\-\-\>[\s\S]*?\<\!\-\-endcomposerlayout\-\-\>/g, '');
+												});
+
+												zip.file( headerFile, headerContent);
+
+												// remove code from footer
+												var footerFile = folderName + '/footer.php',
+												footerContent = zip.file( footerFile ).async( 'string' ).then( function( content) {
+													return content.replace(/\<\!\-\-startcomposerlayout\-\-\>[\s\S]*?\<\!\-\-endcomposerlayout\-\-\>/g, '');
+												});
+
+												zip.file( footerFile, footerContent);
+
+												// remove functions from view
+												var viewFile = folderName + '/app/View/View.php',
+												viewFileContent = zip.file( viewFile ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startcomposerlayout[\s\S]*?\/\/endcomposerlayout/g, '');
+												});
+
+												zip.file( viewFile, viewFileContent);
+
+											}
+
+										}
+
+										return zip;
+									}).then( function serveZip( zip) {
+
+                    if (JSZip.support.blob) {
+
+											zip.generateAsync({
+												type: "blob",
+												compression: "DEFLATE",
+												compressionOptions: {
+													level: 0
+												}
+											}, function updateCallback(metadata) {
+
+													var percent = parseInt( metadata.percent ) + '%';
+													$progress.css('width', percent).html( percent );
+
+													if(metadata.currentFile) {
+														$progressText.show().val( metadata.currentFile );
+													}
+
+												}
+											).then( function success( blob) {
+
+												saveAs( blob, 'starter-kit.zip');
+												$progress.parent().hide();
+												$progressText.hide();
+												$submit.removeAttr('disabled');
+												// then show success message
+												self.showMessage( 'All done! Enjoy!' );
+
+											}, function failure( error) {
+
+												self.showMessage( 'Failed to generate .zip file: ' + error );
+												$submit.removeAttr('disabled');
+
+											});
+
+                    } else {
+
+											self.showMessage( 'Your browser is not supported, sorry' );
+
+										}
+										
+                    return false;
+										
+									});
+
+								} catch( error) {
+
+									self.showMessage( 'Error happened: ' + error );
+
+								}
+
+							});
+
+						});
+
+					},
+
+					/**
+					 * Sanitize model name
+					 **/
+					sanitizeModelName: function( val ) {
+
+						var self = this,
+						tmpVal = val.split('_'),
+						name = '';
+
+						if( tmpVal.length > 0 ) {
+
+							$.each( tmpVal, function( index, value ) {
+								name += self.capitalizeFirstLetter( value );
+							});
+
+						}
+
+						return name;
+
+					},
+
+					/**
+					 * Capitalize first letter
+					 **/
+					capitalizeFirstLetter: function(string) {
+						return string.charAt(0).toUpperCase() + string.slice(1);
+					},
+
+					/**
+					 * Show modal message
+					 **/
+					showMessage: function( text ) {
+
+						var $modal = $('#modal'),
+						$modalMessage = $('#modal-message');
+
+						$modalMessage.html( text );
+						$modal.modal('toggle');
+
+					}
+
+				}
+
+				themeBuilder.init();
+
+			})(jQuery);
+		</script>
+
+	</body>
+</html>
