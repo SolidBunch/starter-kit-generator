@@ -57,6 +57,10 @@
 							<input checked name="features[]" value="oauth" type="checkbox" class="custom-control-input" id="oauth">
 							<label class="custom-control-label" for="oauth">OAuth</label>
 						</div>
+						<div class="custom-control custom-checkbox">
+							<input checked name="features[]" value="bootstrap_menu" type="checkbox" class="custom-control-input" id="bootstrap-menu">
+							<label class="custom-control-label" for="bootstrap-menu">Bootstrap menu with additions</label>
+						</div>
 
 					</div>
 					<div class="col-md-6">
@@ -219,7 +223,7 @@
 							formData = {},
 							defaultPostTypes = ["testimonials", "team_members", "portfolio", "news"],
 							defaultShortcodes = ["alert", "button", "contact_form", "google_map", "heading", "menu", "news", "posts", "pricing_table", "social_login", "tabs", "toggles"],
-							defaultFeatures = ["composerlayout", "oauth"];
+							defaultFeatures = ["composerlayout", "oauth", "bootstrap_menu"];
 
 							$.each( $form.serializeArray(), function( _, kv) {
 								var n = kv.name.replace( '[]', '');
@@ -356,6 +360,75 @@
 												});
 
 												zip.file( viewFile, viewFileContent);
+
+											}
+
+											// remove Bootstrap menu
+											if( $.inArray( 'bootstrap_menu', featuresToRemove ) !== -1 ) {
+
+												zip.remove( folderName + '/vendor-custom/wp-bootstrap-navwalker' );
+												zip.remove( folderName + '/assets/js/front-components/header-menu.js' );
+
+												// remove code from app.js
+												var filePath = folderName + '/app/Controller/Menu.php';
+													console.log(filePath);
+												fileContent = zip.file( filePath ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+												});
+
+												zip.file( filePath, fileContent);
+
+												// remove code from Menu controller
+												var filePath = folderName + '/assets/js/app.js',
+												fileContent = zip.file( filePath ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+												});
+
+												zip.file( filePath, fileContent);
+
+												// remove code from scss
+												var filePath = folderName + '/assets/css/front/partials/_header_menu.scss',
+												fileContent = zip.file( filePath ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+												});
+
+												zip.file( filePath, fileContent);
+
+												// remove code from header
+												var filePath = folderName + '/template-parts/header/header-default.php',
+												fileContent = zip.file( filePath ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+												});
+
+												zip.file( filePath, fileContent);
+
+												// remove code from footer
+												var filePath = folderName + '/template-parts/footer/footer-default.php',
+												fileContent = zip.file( filePath ).async( 'string' ).then( function( content) {
+													return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+												});
+
+												zip.file( filePath, fileContent);
+
+												// remove code from shortcode
+												var filePath = folderName + '/app/Shortcodes/menu/shortcode.php';
+												if ( zip.file( filePath ) ) {
+                                                    var fileContent = zip.file(filePath).async('string').then(function (content) {
+                                                        return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+                                                    });
+
+                                                    zip.file(filePath, fileContent);
+                                                }
+
+												// remove code from shortcode style
+												var filePath = folderName + '/app/Shortcodes/menu/assets/style.scss';
+                                                if ( zip.file( filePath ) ) {
+                                                    var fileContent = zip.file(filePath).async('string').then(function (content) {
+                                                        return content.replace(/\/\/startbootstrapmenu[\s\S]*?\/\/endbootstrapmenu/g, '');
+                                                    });
+
+                                                    zip.file(filePath, fileContent);
+                                                }
 
 											}
 
